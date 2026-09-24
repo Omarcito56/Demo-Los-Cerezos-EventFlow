@@ -11,7 +11,7 @@ export const EventTypesSection = () => {
           <span className="eyebrow">Formatos de Celebración</span>
           <h2 className="section-title-editorial">Diseñado para los momentos que importan</h2>
           <p className="section-subtext">
-            Desde recepciones íntimas hasta cenas de gala multitudinarias, adaptamos la gastronomía, la mantelería y el ritmo del servicio a la identidad de tu evento.
+            Desde bodas inolvidables y recepciones de XV años hasta graduaciones y galas corporativas en Reynosa, en Los Cerezos Salón de Eventos personalizamos el montaje, banquete y ambientación para tu gran ocasión.
           </p>
         </div>
 

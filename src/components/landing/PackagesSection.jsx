@@ -14,7 +14,7 @@ export const PackagesSection = () => {
           <span className="section-demo-badge">PRECIOS DEMOSTRATIVOS</span>
           <h2 className="section-title-editorial">Una experiencia para cada ocasión</h2>
           <p className="section-subtext">
-            Propuestas estructuradas para diferentes formatos y números de invitados. Cada paquete puede personalizarse con servicios adicionales en nuestro cotizador.
+            Propuestas integrales para Los Cerezos Salón de Eventos que combinan salón climatizado, banquete formal, mobiliario, mantelería, sonido, decoración y coordinación. Precios demostrativos personalizables en el cotizador.
           </p>
         </div>
 

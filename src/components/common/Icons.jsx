@@ -321,15 +321,33 @@ export const BuildingIcon = ({ size = 20, className = "" }) => (
   </svg>
 );
 
-export const MayordomoLogoIcon = ({ size = 24, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    {/* Cloche / campana de servicio de banquete elegante */}
-    <path d="M3 17h18"></path>
-    <path d="M4 17c0-4.418 3.582-8 8-8s8 3.582 8 8"></path>
-    <path d="M12 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path>
-    <path d="M12 5v4"></path>
-    <path d="M2 19h20"></path>
+export const CerezosLogoIcon = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    {/* Emblema editorial de Los Cerezos: Flor de gala y corona de celebración */}
+    <circle cx="12" cy="12" r="10.2" strokeWidth="1" strokeDasharray="1.5 2" opacity="0.65" />
+    <path d="M12 4.5c1.4 1.8 2 3.2 1.8 4.6-.2 1.3-1.1 2.2-2.3 2.2-1.2 0-2.1-.9-2.3-2.2-.2-1.4.4-2.8 1.8-4.6" fill="currentColor" fillOpacity="0.18" />
+    <path d="M19.5 12c-1.8 1.4-3.2 2-4.6 1.8-1.3-.2-2.2-1.1-2.2-2.3 0-1.2.9-2.1 2.2-2.3 1.4-.2 2.8.4 4.6 1.8" fill="currentColor" fillOpacity="0.18" />
+    <path d="M12 19.5c-1.4-1.8-2-3.2-1.8-4.6.2-1.3 1.1-2.2 2.3-2.2 1.2 0 2.1.9 2.3 2.2.2 1.4-.4 2.8-1.8 4.6" fill="currentColor" fillOpacity="0.18" />
+    <path d="M4.5 12c1.8-1.4 3.2-2 4.6-1.8 1.3.2 2.2 1.1 2.2 2.3 0 1.2-.9 2.1-2.2 2.3-1.4.2-2.8-.4-4.6-1.8" fill="currentColor" fillOpacity="0.18" />
+    <circle cx="12" cy="12" r="1.8" fill="currentColor" />
   </svg>
 );
 
-export const EventFlowLogoIcon = MayordomoLogoIcon;
+export const WhatsAppIcon = ({ size = 20, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} style={{ display: "inline-block", verticalAlign: "middle", flexShrink: 0 }}>
+    <path 
+      d="M21 11.5a8.5 8.5 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 0 1-.9-3.8 8.5 8.5 0 0 1 8.5-8.5 8.5 8.5 0 0 1 8.5 8.5z" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+    />
+    <path 
+      d="M15.4 13.1c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.5.1-.2.2-.6.7-.7.9-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.3-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.3.3-.4.1-.1.2-.2.2-.4.1-.1 0-.3 0-.4-.1-.1-.5-1.2-.7-1.7-.2-.4-.4-.4-.5-.4h-.4c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9 0 1.1.8 2.2.9 2.4.1.2 1.6 2.5 3.9 3.5.5.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.4-.1 1.3-.5 1.5-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z" 
+      fill="currentColor" 
+    />
+  </svg>
+);
+
+export const EventFlowLogoIcon = CerezosLogoIcon;
+

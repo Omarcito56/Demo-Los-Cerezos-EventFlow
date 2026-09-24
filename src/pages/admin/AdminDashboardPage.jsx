@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEventData } from "../../hooks/useEventData";
 import { 
   FileTextIcon, CalendarIcon, CreditCardIcon, 
-  EyeIcon, ArrowRightIcon, DollarIcon
+  EyeIcon, ArrowRightIcon, CheckCircleIcon, SendIcon
 } from "../../components/common/Icons";
 import { StatusBadge } from "../../components/common/StatusBadge";
 import { EventDetailModal } from "../../components/admin/EventDetailModal";
@@ -23,75 +23,75 @@ export const AdminDashboardPage = () => {
       {/* Disclaimer de datos demo */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.25rem", padding: "0.6rem 1rem", backgroundColor: "#FEF3C7", borderRadius: "var(--radius-sm)", border: "1px solid #FDE68A", fontSize: "0.82rem", color: "#92400E" }}>
         <span>
-          <strong>Entorno de Demostración Comercial:</strong> Todas las métricas, folios y saldos mostrados son ficticios con fines ilustrativos de la solución EventFlow.
+          <strong>Entorno de Demostración Comercial:</strong> Métricas, folios y saldos mostrados son simulaciones para Los Cerezos Salón de Eventos en BS EventFlow.
         </span>
         <span style={{ fontWeight: 700, textTransform: "uppercase", fontSize: "0.72rem" }}>Datos Demostrativos</span>
       </div>
 
-      {/* 5 Métricas Demo Solicitadas */}
+      {/* 5 Métricas Demo Oficiales Solicitadas */}
       <div className="stats-grid">
         {/* 1. Solicitudes Nuevas */}
         <div className="stat-card">
           <div>
-            <div className="stat-val" style={{ color: "var(--color-charcoal-deep)" }}>
+            <div className="stat-val" style={{ color: "var(--color-burgundy)" }}>
               {metrics.newRequests}
             </div>
             <div className="stat-label">Solicitudes nuevas</div>
           </div>
-          <div className="stat-icon-wrap" style={{ backgroundColor: "var(--status-info-bg)", color: "var(--status-info-text)" }}>
+          <div className="stat-icon-wrap" style={{ backgroundColor: "var(--color-burgundy-soft)", color: "var(--color-burgundy)" }}>
             <FileTextIcon size={22} />
           </div>
         </div>
 
-        {/* 2. Eventos Próximos */}
+        {/* 2. Fechas Consultadas */}
         <div className="stat-card">
           <div>
-            <div className="stat-val" style={{ color: "#059669" }}>
-              {metrics.upcomingEvents}
+            <div className="stat-val" style={{ color: "var(--color-charcoal-deep)" }}>
+              {metrics.datesConsulted}
             </div>
-            <div className="stat-label">Eventos próximos</div>
+            <div className="stat-label">Fechas consultadas</div>
           </div>
-          <div className="stat-icon-wrap" style={{ backgroundColor: "#ECFDF5", color: "#059669" }}>
+          <div className="stat-icon-wrap" style={{ backgroundColor: "#EFF6FF", color: "#2563EB" }}>
             <CalendarIcon size={22} />
           </div>
         </div>
 
-        {/* 3. Cotizaciones Pendientes */}
+        {/* 3. Cotizaciones Enviadas */}
         <div className="stat-card">
           <div>
             <div className="stat-val" style={{ color: "#D97706" }}>
-              {metrics.pendingQuotes}
+              {metrics.quotesSent}
             </div>
-            <div className="stat-label">Cotizaciones pendientes</div>
+            <div className="stat-label">Cotizaciones enviadas</div>
           </div>
           <div className="stat-icon-wrap" style={{ backgroundColor: "#FEF3C7", color: "#D97706" }}>
-            <FileTextIcon size={22} />
+            <SendIcon size={22} />
           </div>
         </div>
 
-        {/* 4. Anticipos Registrados */}
+        {/* 4. Eventos Confirmados */}
         <div className="stat-card">
           <div>
-            <div className="stat-val" style={{ color: "var(--color-accent)" }}>
+            <div className="stat-val" style={{ color: "#059669" }}>
+              {metrics.confirmedEvents}
+            </div>
+            <div className="stat-label">Eventos confirmados</div>
+          </div>
+          <div className="stat-icon-wrap" style={{ backgroundColor: "#ECFDF5", color: "#059669" }}>
+            <CheckCircleIcon size={22} />
+          </div>
+        </div>
+
+        {/* 5. Anticipos Registrados */}
+        <div className="stat-card">
+          <div>
+            <div className="stat-val" style={{ color: "var(--color-burgundy)" }}>
               ${metrics.totalDeposits.toLocaleString("es-MX")}
             </div>
-            <div className="stat-label">Anticipos registrados demo</div>
+            <div className="stat-label">Anticipos registrados</div>
           </div>
-          <div className="stat-icon-wrap" style={{ backgroundColor: "var(--color-accent-soft)", color: "var(--color-accent)" }}>
+          <div className="stat-icon-wrap" style={{ backgroundColor: "var(--color-accent-soft)", color: "var(--color-champagne-dark)" }}>
             <CreditCardIcon size={22} />
-          </div>
-        </div>
-
-        {/* 5. Ingresos Proyectados */}
-        <div className="stat-card">
-          <div>
-            <div className="stat-val" style={{ color: "var(--color-charcoal-deep)" }}>
-              ${metrics.projectedIncome.toLocaleString("es-MX")}
-            </div>
-            <div className="stat-label">Ingresos proyectados demo</div>
-          </div>
-          <div className="stat-icon-wrap" style={{ backgroundColor: "#F3F4F6", color: "var(--color-charcoal-deep)" }}>
-            <DollarIcon size={22} />
           </div>
         </div>
       </div>

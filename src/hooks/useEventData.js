@@ -50,9 +50,9 @@ export const useEventData = () => {
   const [payments, setPayments] = useState(() => getStored(STORAGE_KEYS.PAYMENTS, initialPaymentsData));
 
   const refreshFromStorage = useCallback(() => {
-    // Verificar inicialización limpia de datos para El Mayordomo
+    // Verificar inicialización limpia de datos para Los Cerezos
     const storedBus = getStored(STORAGE_KEYS.BUSINESS, null);
-    const isOldData = !storedBus || !storedBus.name || !storedBus.name.includes("Mayordomo");
+    const isOldData = !storedBus || !storedBus.name || !storedBus.name.includes("Cerezos");
 
     if (isOldData) {
       localStorage.setItem(STORAGE_KEYS.BUSINESS, JSON.stringify(initialBusinessData));
@@ -361,8 +361,10 @@ export const useEventData = () => {
     refreshFromStorage();
   };
 
-  // Cálculo de Métricas demo para el Administrador
+  // Cálculo de Métricas demo para el Administrador (Adaptadas para Los Cerezos)
   const newRequestsCount = requests.filter((r) => r.status === "Nueva").length;
+  const quotesSentCount = quotes.filter((q) => q.status === "Enviada" || q.status === "Aceptada").length;
+  const confirmedEventsCount = events.filter((e) => e.status === "Confirmado" || e.status === "Apartado").length;
   const upcomingEventsCount = events.filter((e) => e.status !== "Cancelado" && e.status !== "Realizado").length;
   const pendingQuotesCount = quotes.filter((q) => q.status === "Borrador" || q.status === "Enviada").length;
 
@@ -377,12 +379,20 @@ export const useEventData = () => {
     .filter((r) => r.status === "Nueva" || r.status === "Contactado" || r.status === "Esperando anticipo")
     .reduce((sum, r) => sum + (r.estimatedTotal || 0), 0);
 
+  // Fechas consultadas en agenda y cotizador (métrica demo con base viva)
+  const datesConsultedCount = 28 + requests.length;
+
   const metrics = {
-    newRequests: newRequestsCount || 8,
-    upcomingEvents: upcomingEventsCount || 5,
-    pendingQuotes: pendingQuotesCount || 6,
-    totalDeposits: totalDepositsSum || 25000,
-    projectedIncome: projectedIncomeSum || 145000,
+    // 5 Métricas principales solicitadas para el Dashboard:
+    newRequests: newRequestsCount || 5,
+    datesConsulted: datesConsultedCount,
+    quotesSent: quotesSentCount || 4,
+    confirmedEvents: confirmedEventsCount || 3,
+    totalDeposits: totalDepositsSum || 50000,
+    // Métricas auxiliares:
+    upcomingEvents: upcomingEventsCount || 4,
+    pendingQuotes: pendingQuotesCount || 5,
+    projectedIncome: projectedIncomeSum || 230000,
     activePackagesCount: packages.filter((p) => p.status === "Activo").length,
     totalClientsCount: clients.length
   };

@@ -1,5 +1,5 @@
 import React from "react";
-import { UtensilsIcon, CalendarIcon, ShieldCheckIcon, ClockIcon } from "../common/Icons";
+import { UtensilsIcon, CalendarIcon, ShieldCheckIcon, SparklesIcon } from "../common/Icons";
 
 export const IntroSection = () => {
   return (
@@ -9,37 +9,47 @@ export const IntroSection = () => {
           {/* Visual Composition */}
           <div className="intro-photo-composition">
             <img 
-              src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1000&q=80" 
-              alt="Catering gourmet y montaje de recepción"
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80" 
+              alt="Montaje de gala y banquete en Los Cerezos"
               className="intro-img-main"
               loading="lazy"
             />
             <div className="intro-card-overlay">
               <div className="intro-overlay-num">100%</div>
               <p className="intro-overlay-text">
-                Centralización demostrativa: desde la primera idea de menú hasta el día de la celebración.
+                Celebraciones completas: desde el salón y banquete hasta sonido, foto y coordinación de tu gran fecha.
               </p>
             </div>
           </div>
 
           {/* Text Content */}
           <div className="intro-content">
-            <span className="eyebrow">Concepto del Servicio</span>
+            <span className="eyebrow">Concepto de Servicio</span>
             <h2 className="intro-heading">
-              Celebra. Nosotros organizamos.
+              Celebraciones completas, organizadas desde el primer clic.
             </h2>
             <p className="intro-text-concept">
-              Una experiencia digital puede facilitar desde la primera cotización hasta el seguimiento del evento, reduciendo mensajes repetitivos y centralizando la información en un entorno ágil y confiable.
+              En Los Cerezos Salón de Eventos combinamos instalaciones de gala con una experiencia digital que facilita explorar paquetes integrales, cotizar en vivo y solicitar disponibilidad sin fricción.
             </p>
 
             <div className="intro-points-grid">
               <div className="intro-point-card">
                 <div className="intro-point-icon">
+                  <SparklesIcon size={22} />
+                </div>
+                <h3 className="intro-point-title">Salón y Montaje de Gala</h3>
+                <p className="intro-point-desc">
+                  Espacios climatizados con mobiliario elegante, mantelería fina y diseño floral para bodas y XV años.
+                </p>
+              </div>
+
+              <div className="intro-point-card">
+                <div className="intro-point-icon">
                   <UtensilsIcon size={22} />
                 </div>
-                <h3 className="intro-point-title">Gastronomía y Montaje</h3>
+                <h3 className="intro-point-title">Banquete y Experiencia</h3>
                 <p className="intro-point-desc">
-                  Presentación de banquetes en tiempos y estaciones con vajilla y cristalería cuidada.
+                  Menús formales en tiempos, barra de snacks, estación de café y servicio de alta calidad.
                 </p>
               </div>
 
@@ -47,19 +57,9 @@ export const IntroSection = () => {
                 <div className="intro-point-icon">
                   <CalendarIcon size={22} />
                 </div>
-                <h3 className="intro-point-title">Agenda Centralizada</h3>
+                <h3 className="intro-point-title">Agenda y Disponibilidad</h3>
                 <p className="intro-point-desc">
-                  Consulta de fechas y control de disponibilidad sin cruces de información.
-                </p>
-              </div>
-
-              <div className="intro-point-card">
-                <div className="intro-point-icon">
-                  <ClockIcon size={22} />
-                </div>
-                <h3 className="intro-point-title">Cotizaciones Rápidas</h3>
-                <p className="intro-point-desc">
-                  Estimaciones en tiempo real que ahorran días de intercambio de mensajes.
+                  Consulta de fechas abiertas y seguimiento de apartado para fechas futuras con total claridad.
                 </p>
               </div>
 
@@ -67,9 +67,9 @@ export const IntroSection = () => {
                 <div className="intro-point-icon">
                   <ShieldCheckIcon size={22} />
                 </div>
-                <h3 className="intro-point-title">Certezay Claridad</h3>
+                <h3 className="intro-point-title">Coordinación Total</h3>
                 <p className="intro-point-desc">
-                  Registro de acuerdos, servicios incluidos y seguimiento de anticipos demostrativos.
+                  Sonido, iluminación, fotografía, video y supervisión logística reunidos en una propuesta integral.
                 </p>
               </div>
             </div>

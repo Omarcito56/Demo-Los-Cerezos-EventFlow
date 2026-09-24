@@ -1,4 +1,4 @@
-/* Landing Page Editorial Styles: BS EventFlow — El Mayordomo Banquetes & Catering */
+/* Landing Page Editorial Styles: BS EventFlow — Los Cerezos Salón de Eventos */
 
 /* 1. HERO SECTION */
 .hero-editorial {
@@ -844,8 +844,11 @@
 }
 
 .dot-available { background-color: #10B981; }
+.dot-process { background-color: #F59E0B; }
+.dot-reserved { background-color: #681F32; }
+.dot-unavailable { background-color: #9CA3AF; }
 .dot-limited { background-color: #F59E0B; }
-.dot-busy { background-color: #6B7280; }
+.dot-busy { background-color: #681F32; }
 
 .calendar-month-grid {
   display: grid;
@@ -901,11 +904,19 @@
   color: #065F46;
 }
 
+.status-tag-process,
 .status-tag-limited {
   background-color: #FEF3C7;
   color: #92400E;
 }
 
+.status-tag-reserved {
+  background-color: var(--color-burgundy-soft);
+  color: var(--color-burgundy);
+  border: 1px solid rgba(104, 31, 50, 0.2);
+}
+
+.status-tag-unavailable,
 .status-tag-busy {
   background-color: #F3F4F6;
   color: #6B7280;
@@ -920,12 +931,18 @@
   background-color: #10B981;
 }
 
+.status-tag-process-dot,
 .status-tag-limited-dot {
   background-color: #F59E0B;
 }
 
+.status-tag-reserved-dot {
+  background-color: #681F32;
+}
+
+.status-tag-unavailable-dot,
 .status-tag-busy-dot {
-  background-color: #6B7280;
+  background-color: #9CA3AF;
 }
 
 /* Callout de fecha seleccionada */

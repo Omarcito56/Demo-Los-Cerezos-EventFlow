@@ -1,43 +1,54 @@
 :root {
-  /* Paleta Oficial BS EventFlow — El Mayordomo Banquetes & Catering */
-  --color-charcoal-deep: #1C1B19;       /* Carbón profundo */
-  --color-cream: #F7F2E9;               /* Crema cálido de fondo */
-  --color-champagne: #D8C3A5;           /* Champagne elegante */
-  --color-gold-soft: #B79A6B;           /* Dorado suave */
-  --color-terracotta: #9C6656;          /* Terracota cálido de acento */
+  /* Paleta Oficial BS EventFlow — Los Cerezos Salón de Eventos */
+  --color-burgundy: #681F32;            /* Borgoña profundo de gala */
+  --color-burgundy-dark: #531828;       /* Borgoña intenso */
+  --color-burgundy-light: #842A42;      /* Borgoña iluminado */
+  --color-burgundy-soft: #F7EFF2;       /* Fondo suave borgoña */
+  
+  --color-champagne: #D5BD93;           /* Champagne elegante */
+  --color-champagne-dark: #BFA373;      /* Champagne dorado */
+  --color-champagne-light: #E8D9BF;     /* Champagne sutil */
+  --color-champagne-soft: #FAF6EE;      /* Fondo suave champagne */
+  
+  --color-cream: #F8F3EA;               /* Crema cálido de fondo */
+  --color-cream-alt: #F1E9DA;           /* Crema secundario */
+  
+  --color-charcoal-deep: #22201F;       /* Carbón */
+  --color-charcoal-light: #363331;      /* Carbón atenuado */
   --color-white: #FFFFFF;               /* Blanco puro */
-  --color-text-secondary: #716A61;      /* Texto secundario de alta legibilidad */
+  --color-text-secondary: #655E59;      /* Texto secundario de alta legibilidad */
 
   /* Mapeo Semántico */
-  --color-primary: #1C1B19;             /* Carbón profundo para contrastes y títulos */
-  --color-primary-light: #2D2A26;       /* Carbón iluminado */
-  --color-primary-hover: #0D0C0B;
+  --color-primary: #681F32;             /* Borgoña profundo para marca y botones primarios */
+  --color-primary-light: #842A42;
+  --color-primary-hover: #531828;
 
-  --color-accent: #B79A6B;              /* Dorado suave como acento y llamados a la acción */
-  --color-accent-hover: #9E8356;
-  --color-accent-soft: #F4EFE6;
-  --color-accent-border: #E5D5BD;
+  --color-accent: #D5BD93;              /* Champagne para acentos dorados y contrastes finos */
+  --color-accent-hover: #BFA373;
+  --color-accent-soft: #FAF6EE;
+  --color-accent-border: #E5D5BC;
 
-  --color-cta: #9C6656;                 /* Terracota para CTAs de impacto */
-  --color-cta-hover: #835244;
-  --color-cta-soft: #F9F0EE;
+  --color-cta: #681F32;                 /* Borgoña profundo para llamados a la acción de alto ticket */
+  --color-cta-hover: #531828;
+  --color-cta-soft: #F7EFF2;
 
-  --color-bg: #F7F2E9;                  /* Fondo general crema */
-  --color-bg-alt: #EFE9DC;              /* Fondo crema alternativo */
+  --color-bg: #F8F3EA;                  /* Fondo general crema */
+  --color-bg-alt: #F1E9DA;              /* Fondo crema alternativo */
   --color-surface: #FFFFFF;             /* Superficie de tarjetas y modales */
-  --color-surface-hover: #FCFAF6;
+  --color-surface-hover: #FAF7F2;
 
   /* Tipografías */
-  --color-text-primary: #1C1B19;        /* Texto carbón */
-  --color-text-muted: #8A8277;          /* Texto sutil */
+  --color-text-primary: #22201F;        /* Texto carbón */
+  --color-text-muted: #877F78;          /* Texto sutil */
   --color-text-inverse: #FFFFFF;
 
   /* Gradientes Editoriales y de Lujo */
-  --gradient-gold: linear-gradient(135deg, #B79A6B 0%, #D8C3A5 50%, #B79A6B 100%);
-  --gradient-gold-subtle: linear-gradient(135deg, rgba(216, 195, 165, 0.25) 0%, rgba(183, 154, 107, 0.15) 100%);
-  --gradient-dark-hero: linear-gradient(145deg, #1C1B19 0%, #2A2622 60%, #1C1B19 100%);
-  --gradient-terracotta: linear-gradient(135deg, #9C6656 0%, #B27665 100%);
-  --gradient-card-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(247, 242, 233, 0.75) 100%);
+  --gradient-gold: linear-gradient(135deg, #D5BD93 0%, #E8D9BF 50%, #BFA373 100%);
+  --gradient-gold-subtle: linear-gradient(135deg, rgba(213, 189, 147, 0.28) 0%, rgba(213, 189, 147, 0.12) 100%);
+  --gradient-burgundy: linear-gradient(135deg, #681F32 0%, #842A42 100%);
+  --gradient-burgundy-subtle: linear-gradient(135deg, rgba(104, 31, 50, 0.18) 0%, rgba(104, 31, 50, 0.05) 100%);
+  --gradient-dark-hero: linear-gradient(145deg, #22201F 0%, #363331 60%, #1A1918 100%);
+  --gradient-card-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.97) 0%, rgba(248, 243, 234, 0.85) 100%);
 
   /* Estados */
   --status-pending-bg: #FEF3C7;
@@ -68,12 +79,13 @@
   --font-display: 'Outfit', sans-serif;
 
   /* Sombras Sofisticadas */
-  --shadow-xs: 0 1px 2px 0 rgba(28, 27, 25, 0.04);
-  --shadow-sm: 0 2px 5px 0 rgba(28, 27, 25, 0.06);
-  --shadow-md: 0 4px 16px -2px rgba(28, 27, 25, 0.08), 0 2px 6px -1px rgba(28, 27, 25, 0.04);
-  --shadow-lg: 0 14px 32px -4px rgba(28, 27, 25, 0.1), 0 6px 14px -2px rgba(28, 27, 25, 0.05);
-  --shadow-xl: 0 24px 44px -8px rgba(28, 27, 25, 0.15);
-  --shadow-gold: 0 8px 24px -4px rgba(183, 154, 107, 0.35);
+  --shadow-xs: 0 1px 2px 0 rgba(34, 32, 31, 0.04);
+  --shadow-sm: 0 2px 5px 0 rgba(34, 32, 31, 0.06);
+  --shadow-md: 0 4px 16px -2px rgba(34, 32, 31, 0.08), 0 2px 6px -1px rgba(34, 32, 31, 0.04);
+  --shadow-lg: 0 14px 32px -4px rgba(34, 32, 31, 0.1), 0 6px 14px -2px rgba(34, 32, 31, 0.05);
+  --shadow-xl: 0 24px 44px -8px rgba(34, 32, 31, 0.15);
+  --shadow-gold: 0 8px 24px -4px rgba(213, 189, 147, 0.4);
+  --shadow-burgundy: 0 8px 24px -4px rgba(104, 31, 50, 0.28);
 
   /* Bordes y Radios */
   --radius-xs: 4px;
@@ -83,9 +95,10 @@
   --radius-xl: 30px;
   --radius-full: 9999px;
 
-  --border-subtle: 1px solid rgba(216, 195, 165, 0.35);
-  --border-light: 1px solid #E5DDCF;
-  --border-gold: 1px solid #D8C3A5;
+  --border-subtle: 1px solid rgba(213, 189, 147, 0.35);
+  --border-light: 1px solid #EBE3D5;
+  --border-gold: 1px solid #D5BD93;
+  --border-burgundy: 1px solid #681F32;
 
   /* Transiciones */
   --transition-fast: 0.15s ease;

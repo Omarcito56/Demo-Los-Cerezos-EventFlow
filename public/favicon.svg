@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#1C1B19" />
-  <g transform="translate(4, 4)" stroke="#D8C3A5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 17h18" />
-    <path d="M4 17c0-4.418 3.582-8 8-8s8 3.582 8 8" />
-    <circle cx="12" cy="3" r="2" fill="#D8C3A5" />
-    <path d="M12 5v4" />
-    <path d="M2 19h20" stroke="#B79A6B" />
+  <rect width="32" height="32" rx="8" fill="#681F32" />
+  <g transform="translate(4, 4)" stroke="#D5BD93" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    {/* Emblema refinado Los Cerezos: Flor de cerezo y corona de gala */}
+    <circle cx="12" cy="12" r="10" stroke="#D5BD93" stroke-width="1.2" stroke-dasharray="1 2" />
+    <path d="M12 7c1.5 2 2.5 3.5 2.5 5 0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5c0-1.5 1-3 2.5-5z" fill="#D5BD93" fill-opacity="0.35" />
+    <path d="M17 12c-2 1.5-3.5 2.5-5 2.5-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5c1.5 0 3 1 5 2.5z" fill="#D5BD93" fill-opacity="0.25" />
+    <circle cx="12" cy="12" r="2" fill="#D5BD93" />
   </g>
 </svg>

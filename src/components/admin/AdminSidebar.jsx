@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import { 
   LayoutDashboardIcon, FileTextIcon, CalendarIcon, UsersIcon, 
-  CreditCardIcon, SparklesIcon, SettingsIcon, LogOutIcon, ArrowLeftIcon, MayordomoLogoIcon 
+  CreditCardIcon, SparklesIcon, SettingsIcon, LogOutIcon, ArrowLeftIcon, CerezosLogoIcon 
 } from "../common/Icons";
 import { useEventData } from "../../hooks/useEventData";
 
@@ -20,7 +20,7 @@ export const AdminSidebar = () => {
       {/* Brand Header */}
       <div className="sidebar-header">
         <div className="sidebar-logo-icon">
-          <MayordomoLogoIcon size={22} />
+          <CerezosLogoIcon size={22} />
         </div>
         <div className="sidebar-brand-text">
           <h2 className="sidebar-title">EventFlow Admin</h2>

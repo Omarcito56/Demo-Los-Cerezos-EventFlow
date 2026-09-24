@@ -17,9 +17,9 @@ export const PackagesPage = () => {
       <div className="container">
         <div className="section-header-centered">
           <span className="section-demo-badge">CATÁLOGO DEMOSTRATIVO</span>
-          <h1 className="section-title-editorial">Propuestas de Banquetes & Catering</h1>
+          <h1 className="section-title-editorial">Paquetes Integrales para Celebraciones de Gala</h1>
           <p className="section-subtext">
-            Conoce a detalle nuestros tres paquetes demostrativos base. Puedes personalizar el número de comensales y añadir servicios opcionales en el cotizador interactivo.
+            Conoce a detalle nuestros tres paquetes demostrativos base para Los Cerezos Salón de Eventos. Personaliza invitados, servicios adicionales y solicita disponibilidad en tiempo real.
           </p>
         </div>
 
@@ -81,10 +81,10 @@ export const PackagesPage = () => {
         <div style={{ maxWidth: "780px", margin: "0 auto", textAlign: "center", padding: "1.75rem", backgroundColor: "var(--color-surface)", borderRadius: "var(--radius-md)", border: "1px solid var(--border-light)" }}>
           <SparklesIcon size={24} style={{ color: "var(--color-accent)", margin: "0 auto 0.75rem" }} />
           <h3 style={{ fontSize: "1.25rem", color: "var(--color-charcoal-deep)", marginBottom: "0.5rem" }}>
-            ¿Necesitas una propuesta para un volumen mayor o menú personalizado?
+            ¿Necesitas una propuesta para un volumen mayor o montaje especial?
           </h3>
           <p style={{ fontSize: "0.92rem", color: "var(--color-text-secondary)", marginBottom: "1.25rem" }}>
-            El Mayordomo puede diseñar menús de autor en tiempos, barras de postres especiales y coctelería a la medida.
+            Los Cerezos Salón de Eventos puede coordinar montajes de gala temáticos, mobiliario especial, barras de snacks y fotografía profesional a la medida.
           </p>
           <Link to="/cotizar" className="btn btn-primary btn-sm">
             <span>Iniciar cotizador libre</span>

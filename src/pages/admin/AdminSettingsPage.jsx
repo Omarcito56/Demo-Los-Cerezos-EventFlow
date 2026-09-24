@@ -72,7 +72,7 @@ export const AdminSettingsPage = () => {
           </div>
 
           <div>
-            <label className="form-label" htmlFor="settings-email">Correo oficial verificado</label>
+            <label className="form-label" htmlFor="settings-email">Correo de contacto demo</label>
             <input
               type="email"
               id="settings-email"
@@ -81,9 +81,31 @@ export const AdminSettingsPage = () => {
               onChange={e => setFormData({ ...formData, email: e.target.value })}
               required
             />
-            <span style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>
-              Canal único y verificado para recepción de correos de cotización.
-            </span>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+            <div>
+              <label className="form-label" htmlFor="settings-phone">Teléfono / WhatsApp</label>
+              <input
+                type="text"
+                id="settings-phone"
+                className="form-input"
+                value={formData.phone || "8992126229"}
+                onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                required
+              />
+            </div>
+            <div>
+              <label className="form-label" htmlFor="settings-city">Ubicación</label>
+              <input
+                type="text"
+                id="settings-city"
+                className="form-input"
+                value={formData.city || "Reynosa, Tamaulipas"}
+                onChange={e => setFormData({ ...formData, city: e.target.value })}
+                required
+              />
+            </div>
           </div>
 
           <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "0.5rem" }}>

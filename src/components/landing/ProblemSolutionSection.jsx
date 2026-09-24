@@ -11,11 +11,11 @@ export const ProblemSolutionSection = () => {
           <div className="pitch-content">
             <span className="eyebrow">Digitalización Comercial</span>
             <h2 className="pitch-title">
-              Menos conversaciones dispersas.<br />
-              Más eventos organizados.
+              Menos mensajes dispersos.<br />
+              Más celebraciones organizadas.
             </h2>
             <p className="pitch-text">
-              Una plataforma como EventFlow puede centralizar solicitudes, cotizaciones, fechas, clientes y anticipos en un solo lugar, permitiendo a los banquetistas cerrar más eventos y brindar una experiencia impecable.
+              EventFlow centraliza solicitudes, cotizaciones, fechas y anticipos para Los Cerezos Salón de Eventos, permitiendo cerrar fechas con mayor agilidad y brindar una experiencia premium a cada familia.
             </p>
 
             <div className="pitch-features-list">
@@ -25,7 +25,7 @@ export const ProblemSolutionSection = () => {
                 </div>
                 <div className="pitch-feature-body">
                   <h4>Cotizaciones claras en minutos</h4>
-                  <p>Automatiza el cálculo de paquetes base y extras sin depender de llamadas o notas sueltas.</p>
+                  <p>Automatiza el cálculo de paquetes base y extras sin depender de notas manuales.</p>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ export const ProblemSolutionSection = () => {
                 <span className="mock-dot" style={{ backgroundColor: "#F59E0B" }} />
                 <span className="mock-dot" style={{ backgroundColor: "#10B981" }} />
               </div>
-              <span className="mock-title">EventFlow Admin · El Mayordomo</span>
+              <span className="mock-title">EventFlow Admin · Los Cerezos</span>
               <span className="mock-active-badge">● Demo Activa</span>
             </div>
 

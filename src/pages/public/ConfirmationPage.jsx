@@ -3,7 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useEventData } from "../../hooks/useEventData";
 import { 
   CheckIcon, CheckCircleIcon, ArrowLeftIcon, 
-  CreditCardIcon, SparklesIcon 
+  CreditCardIcon, SparklesIcon, WhatsAppIcon 
 } from "../../components/common/Icons";
 import { StatusBadge } from "../../components/common/StatusBadge";
 import { useTrackOnMount } from "../../analytics/analytics";
@@ -17,11 +17,11 @@ export const ConfirmationPage = () => {
     folio: "EVT-000128",
     clientName: "Cliente Demo",
     eventType: "Boda",
-    packageName: "Celebración",
-    guests: 120,
+    packageName: "Experiencia",
+    guests: 150,
     date: new Date().toISOString().split("T")[0],
-    estimatedTotal: 38500,
-    suggestedDeposit: 5000,
+    estimatedTotal: 72000,
+    suggestedDeposit: 10000,
     status: "Solicitud recibida"
   };
 
@@ -33,8 +33,8 @@ export const ConfirmationPage = () => {
     has_request: Boolean(request?.folio)
   });
 
-  const estimatedTotal = request.estimatedTotal || 38500;
-  const depositAmount = request.suggestedDeposit || 5000;
+  const estimatedTotal = request.estimatedTotal || 72000;
+  const depositAmount = request.suggestedDeposit || 10000;
   const remainingBalance = Math.max(0, estimatedTotal - depositAmount);
 
   const handleRegisterDeposit = () => {
@@ -65,8 +65,21 @@ export const ConfirmationPage = () => {
           </h1>
 
           <p className="confirmation-lead-text">
-            El Mayordomo podrá revisar los detalles y ponerse en contacto contigo para confirmar disponibilidad y preparar una cotización final.
+            Los Cerezos Salón de Eventos podrá revisar los requerimientos de tu evento y ponerse en contacto contigo para coordinar una visita y afinar tu cotización final.
           </p>
+
+          <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+            <a 
+              href={`https://wa.me/528992126229?text=${encodeURIComponent(`Hola Los Cerezos, acabo de enviar mi solicitud en línea con el folio demo ${request.folio} para mi evento.`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-whatsapp btn-sm"
+              style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}
+            >
+              <WhatsAppIcon size={18} />
+              <span>Seguimiento directo por WhatsApp: (899) 212-6229</span>
+            </a>
+          </div>
 
           {/* Details Card */}
           <div className="confirmation-details-card">

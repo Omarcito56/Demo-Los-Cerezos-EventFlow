@@ -110,23 +110,23 @@ button, input, select, textarea {
 }
 
 .btn-primary {
-  background-color: var(--color-charcoal-deep);
+  background: var(--gradient-burgundy);
   color: var(--color-white);
-  border-color: var(--color-charcoal-deep);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--color-burgundy);
+  box-shadow: var(--shadow-burgundy);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
+  background: var(--color-burgundy-dark);
+  border-color: var(--color-burgundy-dark);
   transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 20px rgba(104, 31, 50, 0.4);
 }
 
 .btn-accent {
   background: var(--gradient-gold);
   color: var(--color-charcoal-deep);
-  border: 1px solid rgba(183, 154, 107, 0.5);
+  border: 1px solid rgba(191, 163, 115, 0.6);
   font-weight: 700;
   box-shadow: var(--shadow-gold);
 }
@@ -134,18 +134,33 @@ button, input, select, textarea {
 .btn-accent:hover {
   background-color: var(--color-accent-hover);
   transform: translateY(-1px);
-  box-shadow: 0 10px 26px -4px rgba(183, 154, 107, 0.45);
+  box-shadow: 0 10px 26px -4px rgba(213, 189, 147, 0.5);
 }
 
 .btn-cta {
-  background: var(--gradient-terracotta);
+  background: var(--gradient-burgundy);
   color: var(--color-white);
-  box-shadow: 0 4px 14px rgba(156, 102, 86, 0.35);
+  box-shadow: 0 4px 14px rgba(104, 31, 50, 0.35);
 }
 
 .btn-cta:hover {
+  background: var(--color-burgundy-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(156, 102, 86, 0.45);
+  box-shadow: 0 6px 22px rgba(104, 31, 50, 0.48);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  border: 1px solid #20BA5C;
+  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background-color: #20BA5C;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.45);
 }
 
 .btn-secondary {

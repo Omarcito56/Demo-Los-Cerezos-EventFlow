@@ -5,28 +5,28 @@ import { ArrowRightIcon } from "../common/Icons";
 const steps = [
   {
     num: "01",
-    title: "Cotiza",
-    desc: "Elige tu tipo de evento, número estimado de invitados y extras requeridos en pocos clics."
+    title: "Cotiza tu paquete",
+    desc: "Elige tu tipo de evento, número de invitados y servicios adicionales con cálculo en vivo."
   },
   {
     num: "02",
     title: "Consulta disponibilidad",
-    desc: "Revisa fechas tentativas en el calendario antes de comprometer cualquier decisión."
+    desc: "Revisa fechas abiertas y futuras en nuestro calendario antes de tomar una decisión."
   },
   {
     num: "03",
-    title: "Confirma detalles",
-    desc: "El equipo revisa los requerimientos de montaje, menú en tiempos y horarios de servicio."
+    title: "Personaliza tu montaje",
+    desc: "Define detalles de salón, degustación del banquete, mantelería y música con el equipo de Los Cerezos."
   },
   {
     num: "04",
     title: "Aparta tu fecha",
-    desc: "Bloquea formalmente la fecha con un anticipo pactado y recibe tu comprobante oficial."
+    desc: "Asegura la fecha oficial de tu evento mediante un anticipo pactado con folio digital."
   },
   {
     num: "05",
-    title: "Da seguimiento",
-    desc: "Supervisa los tiempos de montaje, degustación previa y coordinación del gran día."
+    title: "Seguimiento integral",
+    desc: "Supervisa tiempos de montaje, programa de gala y coordinación profesional en un solo lugar."
   }
 ];
 
@@ -35,10 +35,10 @@ export const ExperienceSection = () => {
     <section className="experience-section">
       <div className="container">
         <div className="section-header-centered">
-          <span className="eyebrow">Paso a Paso</span>
-          <h2 className="section-title-editorial">Del primer mensaje al gran día</h2>
+          <span className="eyebrow">Flujo sin Fricción</span>
+          <h2 className="section-title-editorial">Del primer clic al gran día</h2>
           <p className="section-subtext">
-            Diseñamos un flujo sin fricción para que la planeación de tu evento sea tan placentera como la celebración misma.
+            Diseñamos una experiencia transparente para que planear tu boda, XV años o evento social en Los Cerezos sea tan emocionante como la celebración misma.
           </p>
         </div>
 

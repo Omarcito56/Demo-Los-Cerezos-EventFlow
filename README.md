@@ -1,6 +1,6 @@
-# BS EventFlow — El Mayordomo Banquetes & Catering
+# BS EventFlow — Los Cerezos Salón de Eventos
 
-Propuesta comercial interactiva desarrollada por **BS Code** para digitalizar la consulta de paquetes, cotización inicial, selección de fecha, número de invitados, servicios adicionales, solicitud de disponibilidad, registro de cliente, simulación de anticipo demo y administración completa de eventos para **El Mayordomo Banquetes & Catering**.
+Propuesta comercial interactiva desarrollada por **BS Code** para digitalizar la consulta de paquetes integrales, cotización inicial en tiempo real, selección de fecha, número de invitados, servicios adicionales, solicitud de disponibilidad, registro de cliente, simulación de apartado demo y administración completa de eventos para **Los Cerezos Salón de Eventos** (Reynosa, Tamaulipas).
 
 ---
 
@@ -9,7 +9,7 @@ Propuesta comercial interactiva desarrollada por **BS Code** para digitalizar la
 - **Framework**: React 19 + Vite
 - **Lenguaje**: JavaScript (ES Modules)
 - **Enrutamiento**: React Router DOM (v7)
-- **Estilos**: CSS Puro (con variables de diseño editorial, gradientes y micro-interacciones)
+- **Estilos**: CSS Puro (con variables editoriales, paleta borgoña/champagne/crema/carbón y micro-interacciones de gala)
 - **Almacenamiento Local**: `localStorage` reactivo (`useEventData`) con persistencia sincronizada y folios secuenciales (`EVT-000126+`)
 - **Despliegue**: Optimizado para Vercel con `vercel.json` (SPA fallback)
 - **Analítica de Producto**: Vercel Web Analytics + PostHog Product Analytics & Session Replay
@@ -21,29 +21,41 @@ Propuesta comercial interactiva desarrollada por **BS Code** para digitalizar la
 ### Web Pública
 - **Landing Page Editorial**:
   - Hero asimétrico con fotografía de alta gama e indicadores de propuesta demo.
-  - Sección conceptual: *"Celebra. Nosotros organizamos."*
-  - Catálogo de 3 paquetes demostrativos: **Esencial**, **Celebración** y **Premium** (con aviso visible de precios demostrativos).
-  - Selector visual por formatos de evento: Bodas, XV Años, Cumpleaños, Corporativo, Graduaciones y Privado.
-  - Flujo de 5 pasos: *"Del primer mensaje al gran día"*.
-  - Pitch comercial del sistema: *"Menos conversaciones dispersas. Más eventos organizados."*
-  - Calendario público interactivo *"Consulta una fecha"* con disponibilidad demostrativa (sin datos personales).
-  - Sección de contacto oficial (`elmayordomo.banquetes@gmail.com`) y llamada a la acción principal.
+  - Título principal: *"Todo para tu gran día. En una sola experiencia."*
+  - Subtexto: *"Explora paquetes, personaliza servicios y solicita disponibilidad para tu fecha desde un mismo lugar."*
+  - Concepto: *"Celebraciones completas, organizadas desde el primer clic."*
+  - Catálogo de 3 paquetes demostrativos: **Celebración**, **Experiencia** y **Oro** (con aviso visible de **PRECIOS DEMOSTRATIVOS**).
+  - Selector visual por formatos de celebración: Bodas, XV Años, Graduaciones, Eventos corporativos, Aniversarios y Eventos privados.
+  - Flujo de 5 pasos: *"Del primer clic al gran día"*.
+  - Pitch comercial del sistema: *"Menos mensajes dispersos. Más celebraciones organizadas."*
+  - Calendario público interactivo *"Encuentra tu fecha"* con disponibilidad demostrativa en 4 estados oficiales:
+    - **Disponible**
+    - **Cotización en proceso**
+    - **Apartada**
+    - **No disponible**
+  - Atención oficial y botón de WhatsApp verificado (`8992126229` / Reynosa, Tamaulipas).
 - **Cotizador Central (`/cotizar`)**:
   - Stepper guiado de 7 pasos:
-    1. **01 Evento**: Selección de tipo de celebración.
+    1. **01 Evento**: Selección de formato (Boda, XV años, Graduación, Corporativo, Aniversario, Evento privado).
     2. **02 Invitados**: Control numérico y rangos sugeridos (1-50, 51-100, 101-150, 151-200, 200+).
-    3. **03 Paquete**: Elección de propuesta gastronómica.
-    4. **04 Extras**: Activación independiente de servicios adicionales demo con precio.
-    5. **05 Fecha**: Date picker validado contra fechas pasadas + disponibilidad demostrativa en vivo.
-    6. **06 Datos**: Formulario de contacto protegido con `.ph-mask`.
-    7. **07 Resumen**: Desglose formal de cotización y envío de solicitud.
+    3. **03 Paquete**: Elección de propuesta integral (Celebración, Experiencia, Oro).
+    4. **04 Extras**: Activación independiente de servicios adicionales demo (Snacks, Barra de café, Cabina fotográfica, Decoración especial, Mesa principal, Audio/iluminación, Fotografía adicional, Video cinemático, Servicios adicionales).
+    5. **05 Fecha**: Date picker validado contra fechas pasadas + disponibilidad demostrativa en vivo (Disponible, En proceso, Apartada, No disponible).
+    6. **06 Datos**: Formulario de contacto protegido con `.ph-mask` y localización en Reynosa.
+    7. **07 Resumen**: Desglose formal de cotización y envío de solicitud a Los Cerezos.
   - Barra de cálculo dinámico permanente con desglose de paquete base, ajuste por invitados y extras en tiempo real.
 - **Confirmación (`/confirmacion`)**:
   - Folio generado correlativo (`EVT-000128+`) y estado inicial *"Solicitud recibida"*.
-  - Simulador *"Aparta tu fecha"* con cálculo de anticipo demo ($5,000 MXN), restante estimado, simulación de método (Transferencia demo / Tarjeta demo) y badge explícito de **SIMULACIÓN**.
+  - Botón directo de seguimiento inmediato por WhatsApp (`8992126229`).
+  - Simulador *"Aparta tu fecha"* con cálculo de anticipo demo ($10,000 MXN), restante estimado, simulación de método (Transferencia demo / Tarjeta demo) y badge explícito de **SIMULACIÓN DEMOSTRATIVA**.
 
 ### Panel de Administración (`/admin` / `EventFlow Admin`)
-1. **Resumen (`/admin/dashboard`)**: Métricas clave en tiempo real, solicitudes recientes y eventos próximos.
+1. **Resumen (`/admin/dashboard`)**: Métricas clave en tiempo real:
+   - **Solicitudes nuevas**
+   - **Fechas consultadas**
+   - **Cotizaciones enviadas**
+   - **Eventos confirmados**
+   - **Anticipos registrados**
 2. **Solicitudes (`/admin/solicitudes`)**: Tabla interactiva con búsqueda, filtro por estado (`Nueva`, `Contactado`, `Cotización enviada`, `Esperando anticipo`, `Confirmada`, `Descartada`), cambio rápido de estado y conversión a evento.
 3. **Calendario (`/admin/calendario`)**: Vista mensual de montajes y disponibilidad con código de color por estado.
 4. **Eventos (`/admin/eventos`)**: Control de eventos confirmados, montos cobrados, saldos pendientes y registro de abonos demo.
@@ -51,15 +63,15 @@ Propuesta comercial interactiva desarrollada por **BS Code** para digitalizar la
 6. **Cotizaciones (`/admin/cotizaciones`)**: Registro de cotizaciones emitidas con vista de detalle.
 7. **Pagos (`/admin/pagos`)**: Control de anticipos, segundos pagos y liquidaciones registradas.
 8. **Paquetes Demo (`/admin/paquetes`)**: Edición de precios base, capacidades y descripciones en `localStorage`.
-9. **Configuración (`/admin/configuracion`)**: Ajustes comerciales de la propuesta y botón de reinicio demo de fábrica.
+9. **Configuración (`/admin/configuracion`)**: Identidad de la propuesta (nombre, teléfono, ciudad), telemetría de BS Code y botón de reinicio demo de fábrica.
 
 ---
 
 ## 3. Configuración de Analytics y Telemetría
 
 La demo reporta automáticamente al proyecto central de PostHog de BS Code (**"BS Code Demos"**):
-- **`demoId`**: `el_mayordomo_eventflow`
-- **`prospectId`**: `el_mayordomo`
+- **`demoId`**: `los_cerezos_eventflow`
+- **`prospectId`**: `los_cerezos`
 - **`projectType`**: `bs_code_demo`
 - **`projectName`**: `BS Code Demos`
 
@@ -115,6 +127,6 @@ Archivo de configuración central:
 
 4. Credenciales de acceso al panel administrativo demo:
    - **Ruta**: `/admin/login`
-   - **Usuario**: `admin@eventflow.demo`
+   - **Usuario**: `admin@eventflow.demo` (o `loscerezos@eventflow.demo`)
    - **Contraseña**: `demo123`
    - (Cuenta con botón de autocompletado en pantalla).

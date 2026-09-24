@@ -26,9 +26,9 @@ export const AdminCalendarPage = () => {
     if (dayEvents.some(e => e.status === "Confirmado")) {
       status = "Confirmado";
     } else if (dayEvents.some(e => e.status === "Apartado")) {
-      status = "Apartado";
+      status = "Apartada";
     } else if (dayRequests.some(r => r.status === "Esperando anticipo" || r.status === "Cotización enviada")) {
-      status = "Cotización pendiente";
+      status = "Cotización en proceso";
     } else if (i === 10 || i === 19) {
       status = "No disponible";
     }
@@ -64,12 +64,12 @@ export const AdminCalendarPage = () => {
               Confirmado
             </span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
-              <span style={{ width: "10px", height: "10px", borderRadius: "2px", backgroundColor: "#3B82F6" }} />
-              Apartado
+              <span style={{ width: "10px", height: "10px", borderRadius: "2px", backgroundColor: "var(--color-burgundy)" }} />
+              Apartada
             </span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
               <span style={{ width: "10px", height: "10px", borderRadius: "2px", backgroundColor: "#F59E0B" }} />
-              Cotización pendiente
+              Cotización en proceso
             </span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}>
               <span style={{ width: "10px", height: "10px", borderRadius: "2px", backgroundColor: "#6B7280" }} />

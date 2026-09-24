@@ -17,10 +17,10 @@ export const FinalCtaSection = () => {
             Comienza Hoy
           </span>
           <h2 className="final-cta-title">
-            Haz que tu evento empiece con una mejor experiencia.
+            Haz que tu gran día empiece con la mejor experiencia.
           </h2>
           <p className="final-cta-text">
-            Personaliza el paquete, define los tiempos de tu banquete y solicita disponibilidad de forma ágil, clara y profesional.
+            Explora paquetes integrales para Los Cerezos Salón de Eventos en Reynosa y solicita disponibilidad para tu fecha desde un mismo lugar.
           </p>
           <Link to="/cotizar" className="btn btn-accent btn-lg">
             <span>Cotizar mi evento</span>

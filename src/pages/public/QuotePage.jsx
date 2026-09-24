@@ -30,13 +30,13 @@ export const QuotePage = () => {
 
   // Leer parámetros iniciales de URL si viene de landing o tipos de evento
   const initialType = searchParams.get("tipo") || "boda";
-  const initialPkgId = searchParams.get("paquete") || "celebracion";
+  const initialPkgId = searchParams.get("paquete") || "experiencia";
   const initialDate = searchParams.get("fecha") || "";
 
   // Estado del formulario de cotización
   const [quoteState, setQuoteState] = useState({
     eventType: initialType,
-    guests: 100,
+    guests: 150,
     packageId: initialPkgId,
     selectedExtras: [],
     date: initialDate,
@@ -68,11 +68,11 @@ export const QuotePage = () => {
   const selectedPackage = packages.find(p => p.id === quoteState.packageId) || packages[0];
 
   // Cálculo Dinámico en Tiempo Real
-  const basePrice = selectedPackage.priceNumber || 22000;
-  const baseGuests = selectedPackage.baseGuests || 50;
-  const extraGuestPrice = selectedPackage.extraGuestPrice || 240;
+  const basePrice = selectedPackage.priceNumber || 72000;
+  const baseGuests = selectedPackage.baseGuests || 150;
+  const extraGuestPrice = selectedPackage.extraGuestPrice || 340;
 
-  // Si los invitados exceden la base de 50 personas, se calcula el ajuste proporcional
+  // Si los invitados exceden la base, se calcula el ajuste proporcional
   const extraGuestsCount = Math.max(0, quoteState.guests - baseGuests);
   const guestsAdjustment = extraGuestsCount * extraGuestPrice;
 
@@ -83,7 +83,7 @@ export const QuotePage = () => {
   }, 0);
 
   const estimatedTotal = basePrice + guestsAdjustment + extrasTotal;
-  const suggestedDeposit = 5000; // Anticipo demo base
+  const suggestedDeposit = 10000; // Anticipo demo base para salón
 
   // Verificar disponibilidad mock de la fecha elegida
   const getDateAvailability = (dateStr) => {
@@ -155,8 +155,8 @@ export const QuotePage = () => {
         setErrorMsg("Por favor selecciona una fecha tentativa para tu evento.");
         return;
       }
-      if (selectedDateAvailability === "ocupada") {
-        setErrorMsg("La fecha seleccionada se encuentra ocupada en la agenda demostrativa. Por favor selecciona otro día.");
+      if (selectedDateAvailability === "apartada" || selectedDateAvailability === "no_disponible" || selectedDateAvailability === "ocupada") {
+        setErrorMsg("La fecha seleccionada se encuentra apartada o no disponible en la agenda demostrativa. Por favor selecciona otro día disponible.");
         return;
       }
     }
@@ -311,11 +311,11 @@ export const QuotePage = () => {
                         <div className="event-select-icon">
                           {type.id === "boda" && <HeartIcon size={24} />}
                           {type.id === "xv-anos" && <SparklesIcon size={24} />}
-                          {type.id === "cumpleanos" && <GiftIcon size={24} />}
-                          {type.id === "corporativo" && <BriefcaseIcon size={24} />}
                           {type.id === "graduacion" && <AcademicIcon size={24} />}
+                          {type.id === "corporativo" && <BriefcaseIcon size={24} />}
+                          {type.id === "aniversario" && <GiftIcon size={24} />}
                           {type.id === "evento-privado" && <StarIcon size={24} />}
-                          {type.id === "otro" && <SparklesIcon size={24} />}
+                          {!["boda", "xv-anos", "graduacion", "corporativo", "aniversario", "evento-privado"].includes(type.id) && <SparklesIcon size={24} />}
                         </div>
                         <span className="event-select-name">{type.name}</span>
                         <span style={{ fontSize: "0.76rem", color: "var(--color-text-muted)" }}>{type.subtitle}</span>
@@ -331,7 +331,7 @@ export const QuotePage = () => {
               <div>
                 <h2 className="quote-step-title">¿Cuántas personas esperas?</h2>
                 <p className="quote-step-desc">
-                  Ingresa el número proyectado de asistentes. Los paquetes base contemplan hasta 50 comensales y ajustan costos adicionales por persona de forma transparente.
+                  Ingresa el número proyectado de asistentes. Los paquetes base contemplan el montaje inicial y ajustan comensales adicionales de forma transparente.
                 </p>
 
                 <div className="guests-control-box">
@@ -500,13 +500,16 @@ export const QuotePage = () => {
                         </div>
                         <div style={{ fontSize: "0.82rem" }}>
                           {selectedDateAvailability === "disponible" && (
-                            <span style={{ color: "#065F46", fontWeight: 700 }}>✓ Fecha Disponible para banquetes</span>
+                            <span style={{ color: "#065F46", fontWeight: 700 }}>✓ Fecha Disponible en el salón</span>
                           )}
-                          {selectedDateAvailability === "limitada" && (
-                            <span style={{ color: "#B45309", fontWeight: 700 }}>⚠ Disponibilidad Limitada (pocas brigadas restantes)</span>
+                          {(selectedDateAvailability === "proceso" || selectedDateAvailability === "limitada") && (
+                            <span style={{ color: "#B45309", fontWeight: 700 }}>⚠ Cotización en proceso (Aún puedes enviar tu solicitud)</span>
                           )}
-                          {selectedDateAvailability === "ocupada" && (
-                            <span style={{ color: "#DC2626", fontWeight: 700 }}>✕ Fecha no disponible para nuevos montajes</span>
+                          {selectedDateAvailability === "apartada" && (
+                            <span style={{ color: "var(--color-burgundy)", fontWeight: 700 }}>✕ Fecha apartada con anticipo registrado</span>
+                          )}
+                          {(selectedDateAvailability === "no_disponible" || selectedDateAvailability === "ocupada") && (
+                            <span style={{ color: "#6B7280", fontWeight: 700 }}>✕ Fecha no disponible para eventos</span>
                           )}
                         </div>
                       </div>
@@ -514,7 +517,7 @@ export const QuotePage = () => {
                   )}
 
                   <p style={{ fontSize: "0.8rem", color: "var(--color-text-muted)" }}>
-                    Disponibilidad mostrada únicamente para fines demostrativos.
+                    Disponibilidad mostrada únicamente para fines demostrativos en Los Cerezos Salón de Eventos.
                   </p>
                 </div>
               </div>
@@ -535,7 +538,7 @@ export const QuotePage = () => {
                       type="text" 
                       id="client-name"
                       className="form-input ph-mask"
-                      placeholder="Ej. Mariana García"
+                      placeholder="Ej. Mariana Garza"
                       value={quoteState.clientName}
                       onChange={(e) => setQuoteState({ ...quoteState, clientName: e.target.value })}
                       required
@@ -548,7 +551,7 @@ export const QuotePage = () => {
                       type="tel" 
                       id="client-phone"
                       className="form-input ph-mask"
-                      placeholder="Ej. 81 2345 6789"
+                      placeholder="Ej. 899 123 4567"
                       value={quoteState.clientPhone}
                       onChange={(e) => setQuoteState({ ...quoteState, clientPhone: e.target.value })}
                       required
@@ -571,12 +574,12 @@ export const QuotePage = () => {
                   </div>
 
                   <div>
-                    <label className="form-label" htmlFor="client-zone">Ciudad o zona del evento</label>
+                    <label className="form-label" htmlFor="client-zone">Colonia o sector en Reynosa</label>
                     <input 
                       type="text" 
                       id="client-zone"
                       className="form-input ph-mask"
-                      placeholder="Ej. San Pedro, Carretera Nacional, Cumbres"
+                      placeholder="Ej. Las Fuentes, Anzaldúas, Jarachina, Ribereña, Reynosa Centro"
                       value={quoteState.cityZone}
                       onChange={(e) => setQuoteState({ ...quoteState, cityZone: e.target.value })}
                     />
@@ -588,7 +591,7 @@ export const QuotePage = () => {
                   <textarea 
                     id="client-comments"
                     className="form-textarea ph-mask"
-                    placeholder="Cuéntanos si requieres menú especial, restricciones de alimentos, salón propio o quinta particular..."
+                    placeholder="Cuéntanos si requieres montaje de pista especial, barra de café o snacks, horario de recepción o detalles de tu celebración..."
                     value={quoteState.comments}
                     onChange={(e) => setQuoteState({ ...quoteState, comments: e.target.value })}
                   />
@@ -613,7 +616,7 @@ export const QuotePage = () => {
               <div>
                 <h2 className="quote-step-title">Resumen de tu cotización</h2>
                 <p className="quote-step-desc">
-                  Revisa los detalles antes de enviar tu solicitud formal a El Mayordomo.
+                  Revisa los detalles antes de enviar tu solicitud formal a Los Cerezos Salón de Eventos.
                 </p>
 
                 <div className="quote-summary-sheet">
@@ -639,7 +642,7 @@ export const QuotePage = () => {
                     </div>
 
                     <div className="sheet-row">
-                      <span className="sheet-label">Paquete gastronómico:</span>
+                      <span className="sheet-label">Paquete integral:</span>
                       <span className="sheet-val">{selectedPackage.name}</span>
                     </div>
 
@@ -676,7 +679,7 @@ export const QuotePage = () => {
                         Total Estimado Demo
                       </span>
                       <div style={{ fontSize: "0.8rem", color: "#C5BDB2" }}>
-                        Incluye paquete base, ajuste de invitados y extras
+                        Incluye salón, paquete base, ajuste de invitados y extras
                       </div>
                     </div>
                     <div className="sheet-total-num">
@@ -692,7 +695,7 @@ export const QuotePage = () => {
                       onClick={handleSubmitRequest}
                     >
                       <SparklesIcon size={18} />
-                      <span>Enviar solicitud a El Mayordomo</span>
+                      <span>Enviar solicitud a Los Cerezos</span>
                     </button>
 
                     <button 
